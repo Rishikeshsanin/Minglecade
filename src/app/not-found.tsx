@@ -1,0 +1,1 @@
+import Link from 'next/link';export default function NotFound(){return <main className="not-found"><div className="eyebrow">404 — WRONG TURN</div><h1>Game over? <em>Not yet.</em></h1><p>That experience doesn't exist in our collection.</p><Link className="primary-btn" href="/">Back to Minglecade ↗</Link></main>}

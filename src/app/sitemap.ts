@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';import {games} from '@/data/games';export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_SITE_URL||'https://minglecade.vercel.app';return [{url:base,changeFrequency:'weekly',priority:1},...games.map(g=>({url:`${base}/game/${g.slug}`,changeFrequency:'monthly' as const,priority:0.7}))]}

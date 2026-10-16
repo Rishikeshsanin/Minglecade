@@ -5,7 +5,7 @@
 A curated, mobile-friendly directory of original independent games, shared music experiences, and bite-sized fun. The hub **does not host or embed the games**: every Play Now link opens the original application in a new tab.
 
 ## Stack
-Next.js App Router, React, TypeScript, Tailwind CSS, Lucide React, deployed on Vercel. No auth, database or backend API required.
+Next.js App Router, React, TypeScript, Tailwind CSS, Lucide React; designed for Vercel. Motion can be added for later polish. No auth, database or backend API required.
 
 ## Run
 ```bash
@@ -24,3 +24,6 @@ Edit `src/data/games.ts`: add a game with a unique slug, accurate category, mode
 - Real screenshots are used where already available; other games get clearly stylized title art until screenshots can be captured.
 - No credentials, API keys, or cross-project infrastructure are required.
 - Brand name and copy are intentionally easy to change.
+
+## Quality checks
+Run `npm test`, `npm run lint`, `npm run build`; CI repeats all three on pushes and pull requests. Screenshots are loaded from existing projects when available; remaining cards use original title art until real images are provided.
