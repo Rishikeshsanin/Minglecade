@@ -4,6 +4,6 @@ test('all 16 selected applications are represented',()=>{for(const slug of ['pas
 test('each game has an outbound HTTPS URL and repository reference',()=>{const urls=[...content.matchAll(/url:'(https?:[^']+)'/g)];assert.equal(urls.length,16);urls.forEach(x=>assert.ok(x[1].startsWith('https://')));assert.equal([...content.matchAll(/repo:'/g)].length,16)});
 test('solo and optional games are labeled',()=>{assert.ok(content.includes("optional:true"));assert.ok(content.includes("mode:'Solo'"))});
 
-test('BlindRank is accurately listed as available solo play, with party rooms pending',()=>{assert.match(content,/slug:'blindrank'.*?mode:'Multiplayer'.*?url:'https:\/\/blindrank-lemon\.vercel\.app'/s);assert.match(content,/Play solo, compete in Classic Party rooms, or try Guess My Ranking/)});
+test('BlindRank lists live multiplayer and solo play without a coming-soon claim',()=>{assert.match(content,/slug:'blindrank'.*?mode:'Multiplayer'.*?url:'https:\/\/blindrank-lemon\.vercel\.app'/s);assert.match(content,/Play solo, compete in Classic Party rooms, or try Guess My Ranking/)});
 
 test('Never Have I Ever has a verified HTTPS destination and its mature levels are clearly labeled',()=>{assert.match(content,/slug:'never-have-i-ever'.*?category:'Party & friends'.*?url:'https:\/\/never-have-i-ever-game\.vercel\.app'/s);assert.match(content,/Mature prompts require consenting adults \(18\+\)/)});
